@@ -1,3 +1,5 @@
+package basicjavaprograms;
+
 public class WhileLoop {
     public static void main(String[] gkcsd) {
         int i = 0;
