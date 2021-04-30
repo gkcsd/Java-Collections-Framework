@@ -1,4 +1,4 @@
-package collectionframeworkprograms;
+package collectionframeworkprograms.generics;
 
 public class ProgramThree {
     public static void main(String[] args) {
