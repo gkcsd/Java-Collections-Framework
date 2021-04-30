@@ -1,4 +1,4 @@
-package collectionframeworkprograms;
+package collectionframeworkprograms.generics;
 
 class TestTwo<T, S> {
     T x;
