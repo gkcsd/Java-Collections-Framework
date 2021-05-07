@@ -4,7 +4,7 @@ import java.util.*;
 
 
 
-class HackerRankArraylistSol {
+public class HackerRankArraylistSol {
 
 
     public static void main(String[] args) {
