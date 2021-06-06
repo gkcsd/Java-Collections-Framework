@@ -6,17 +6,17 @@ import java.util.*;
 public class BellaCiao {
 
     private static void sol(FastScanner fs, PrintWriter out) throws IOException {
-        int D = fs.nextInt(); //total no days hijack
-        int d = fs.nextInt(); // incrementation day interval
-        int P = fs.nextInt(); // printing money for each day
-        int Q = fs.nextInt(); // amount want to increase after interval
-        int count = 0;
-        int x = D/d;
+        long D = fs.nextInt(); //total no days hijack
+        long d = fs.nextInt(); // incrementation day interval
+        long P = fs.nextInt(); // printing money for each day
+        long Q = fs.nextInt(); // amount want to increase after interval
+        long count;
+        long x = D/d;
 
         if(x%2 == 0) {
-           count += d * ((x/2)* (2*P*(x-1)*Q));
+            count = d*((x/2)*(2 * P +(x-1)*Q));
         } else {
-            count += d* (x*(P+((x-1)/2)*Q));
+            count = d * (x * (P+((x-1)/2)*Q));
         }
         count += (D%d) * (P + (x)*Q);
         out.println(count);
@@ -26,7 +26,7 @@ public class BellaCiao {
         FastScanner fs = new FastScanner();
         PrintWriter out = new PrintWriter(new OutputStreamWriter(System.out));
 
-        int T = fs.nextInt();
+        long T = fs.nextInt();
         while(T-- > 0) {
             sol(fs, out);
         }
