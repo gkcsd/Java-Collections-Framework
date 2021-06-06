@@ -13,11 +13,12 @@ public class BellaCiao {
         int count = 0;
         int x = D/d;
 
-        if(D%d == 0) {
-            count = d * x * P + Q * (x - 1) * (x) * d / 2;
+        if(x%2 == 0) {
+           count += d * ((x/2)* (2*P*(x-1)*Q));
         } else {
-            count = (d * x * P + Q*(x-1)*(x)*d/2) + (D%d) * (P+x*Q);
+            count += d* (x*(P+((x-1)/2)*Q));
         }
+        count += (D%d) * (P + (x)*Q);
         out.println(count);
     }
 
