@@ -4,34 +4,32 @@ import java.io.*;
 import java.util.*;
 
 public class ThunderBitz {
-    final static long MOD = 1000000007L;
+    public static long getPower(long n, long m) {
+        final long MOD = 1000000007L;
+        if(m == 0) return -1;
+        if(m == 1) return n;
 
-    static int printF(long a, int b, long MOD) {
-        long res = 1;
-        while(b>0) {
-            if(b == 1) {
-                res = (res * a) % MOD;
-            }
-                a = (a*a)%MOD;
-                b = b>>1;
-
+        if(m%2 == 0) {
+            long ans = getPower(n,m/2);
+            return (ans*ans)%MOD;
+        }else {
+            long ans = getPower(n,(m-1)/2);
+            return ((n*ans)%MOD*ans)%MOD;
         }
-        return (int) res;
     }
 
     private static void sol(FastScanner fs, PrintWriter out) throws IOException {
-        int n = fs.nextInt();
-        int m = fs.nextInt();
-        int num = printF(2,n, MOD) - 1;
-        out.println(printF(num,m, MOD));
-
+        long n = fs.nextInt();
+        long m = fs.nextInt();
+        long temp = getPower(2,n) - 1;
+        out.println(getPower(temp, m));
     }
 
     public static void main(String[] args) throws IOException {
         FastScanner fs = new FastScanner();
         PrintWriter out = new PrintWriter(new OutputStreamWriter(System.out));
 
-        int T = fs.nextInt();
+        long T = fs.nextInt();
         while(T-- > 0) {
             sol(fs, out);
         }
