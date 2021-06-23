@@ -13,5 +13,4 @@ public class FactorialOne {
             fact = factorial(number);
             System.out.println("Factorial of "+number+" is: "+fact);
         }
-    }
 }
