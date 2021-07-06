@@ -12,20 +12,21 @@ public class GcdLcm {
         FastScanner fs = new FastScanner();
         int T = fs.nextInt();
         while (T-- > 0) {
-            int a=fs.nextInt();
-            int b=fs.nextInt();
-            int res1 = gcdFun(a,b);
-            int res2 = lcmFun(a,b);
+            long a=fs.nextInt();
+            long b=fs.nextInt();
+            long res1=0, res2=0;
+            res1 = gcdFun(a,b);
+            res2 = lcmFun(a,b);
             System.out.println(res1 + " " + res2);
         }
     }
-    static int gcdFun(int a,int b) {
+    static long gcdFun(long a,long b) {
         if(b==0)
             return a;
         else
             return gcdFun(b,a%b);
     }
-    static int lcmFun(int a,int b) {
+    static long lcmFun(long a,long b) {
         return (a*b)/gcdFun(a,b);
     }
 
